@@ -1,5 +1,5 @@
 # 1. 框架组合
-retrofit+okhttp+rxjava负责网络请求，使用gson进行json数据解释,使用glide加载图片,使用rxbinding+BaseViewModel进行mvvm框架搭建
+	>retrofit+okhttp+rxjava负责网络请求，使用gson进行json数据解释,使用glide加载图片,使用rxbinding+BaseViewModel进行mvvm框架搭建
 
 # 2.	数据绑定
 使用google rxbinding 实现双向绑定，并扩展不支持的数据绑定
@@ -35,7 +35,7 @@ allprojects {
 在app工程中build.gradle添加依赖:
 
 ```
-	implementation 'com.github.troyzqmingming:mvvmLib:vx.x.x'
+	implementation 'com.github.troyzqmingming:mvvmLib:x.x.x'
 ```
 
 # 快速使用
