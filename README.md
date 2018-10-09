@@ -88,6 +88,7 @@ override fun getLayoutId(savedInstanceState: Bundle?) = R.layout.ui_activity_mai
         }
     })
 ```
+
 ###View
 |  XML Attribute |          | Description |
 |----------|:-------------:|------:|
