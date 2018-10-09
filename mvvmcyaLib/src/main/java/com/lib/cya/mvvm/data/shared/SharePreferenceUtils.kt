@@ -3,9 +3,9 @@ package com.lib.cya.mvvm.data.shared
 import android.content.Context
 import android.content.SharedPreferences
 
-class SharePreferenceUtils {
+class SharePreferenceUtils private constructor(context: Context) {
 
-    private constructor(context: Context) {
+    init {
         preferences = context.getSharedPreferences(context.packageName, Context.MODE_PRIVATE)
     }
 
@@ -25,7 +25,7 @@ class SharePreferenceUtils {
         preferences.edit().putString(key, value).apply()
     }
 
-    fun getString(key: String, defaultValue: String = ""): String {
+    fun getString(key: String, defaultValue: String = ""): String? {
         return preferences.getString(key, defaultValue)
     }
 
@@ -57,7 +57,7 @@ class SharePreferenceUtils {
         preferences.edit().putStringSet(key, value).apply()
     }
 
-    fun getStringSet(key: String, defaultValue: HashSet<String> = hashSetOf()): Set<String> {
+    fun getStringSet(key: String, defaultValue: HashSet<String> = hashSetOf()): Set<String>? {
         return preferences.getStringSet(key, defaultValue)
     }
 }

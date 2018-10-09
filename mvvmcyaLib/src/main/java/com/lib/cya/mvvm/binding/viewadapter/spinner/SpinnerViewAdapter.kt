@@ -17,7 +17,7 @@ open class SpinnerViewAdapter {
          * @param selectValue     显示的value
          * @param onItemSelectedCommand 点击的监听
          */
-        @BindingAdapter(value = ["dataList", "selectValue", "onItemSelectedCommand"])
+        @BindingAdapter(value = ["dataList", "selectValue", "onItemSelectedCommand"], requireAll = false)
         @JvmStatic
         fun onItemSelectedCommand(spinner: Spinner, dataList: MutableList<ISpinner>, selectValue: String, bindingCommand: BindingCommand2<ISpinner>) {
             val datas = mutableListOf<String>()
