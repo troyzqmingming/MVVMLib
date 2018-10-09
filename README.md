@@ -1,5 +1,6 @@
 # 1. 框架组合
-	>retrofit+okhttp+rxjava负责网络请求，使用gson进行json数据解释,使用glide加载图片,使用rxbinding+BaseViewModel进行mvvm框架搭建
+
+retrofit+okhttp+rxjava负责网络请求，使用gson进行json数据解释,使用glide加载图片,使用rxbinding+BaseViewModel进行mvvm框架搭建
 
 # 2.	数据绑定
 使用google rxbinding 实现双向绑定，并扩展不支持的数据绑定
@@ -40,7 +41,7 @@ allprojects {
 
 # 快速使用
 ## 1关联ViewModel
-1.1在layout.xml中添加variable
+- 在layout.xml中添加variable
 
 ```
 <layout xmlns:binding="http://schemas.android.com/apk/res-auto">
@@ -52,7 +53,7 @@ allprojects {
 </layout>
 ```
 
-1.2继承Base
+- 继承Base
 继承BaseActivity,指定对应layoutBinding及ViewModel将自动生成对象
 ```
 class MainActivity : BaseActivity<UiActivityMainBinding, MainVM>() {}
