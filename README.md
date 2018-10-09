@@ -1,13 +1,13 @@
-#1. 框架组合
+# 1. 框架组合
 retrofit+okhttp+rxjava负责网络请求，使用gson进行json数据解释,使用glide加载图片,使用rxbinding+BaseViewModel进行mvvm框架搭建
 
-#2.	数据绑定
+# 2.	数据绑定
 使用google rxbinding 实现双向绑定，并扩展不支持的数据绑定
 
-#3.	基类封装
+# 3.	基类封装
 针对mvvm模式，封装BaseActivity、BaseFragment、BaseViewModel，ViewDataBinding与ViewModel无需重新定义，只需在BaseActivity和BaseFragment中限定范型即可使用
 
-#准备工作
+# 准备工作
 1.	启用dataBinding
 	在app工程中build.gradle的android{}中加入:
 	
@@ -38,8 +38,8 @@ allprojects {
 	implementation 'com.github.troyzqmingming:mvvmLib:vx.x.x'
 ```
 
-#快速使用
-##1关联ViewModel
+# 快速使用
+## 1关联ViewModel
 1.1在layout.xml中添加variable
 
 ```
@@ -68,7 +68,7 @@ override fun getLayoutId(savedInstanceState: Bundle?) = R.layout.ui_activity_mai
     override fun getViewModel() = MainVM(this, binding)
 ```
 
-#bindingAdapter
+# bindingAdapter
 统一使用BindingCommand和BindingCommand2进行监听
 
 ```
@@ -89,14 +89,14 @@ override fun getLayoutId(savedInstanceState: Bundle?) = R.layout.ui_activity_mai
     })
 ```
 
-###View
+### View
 |  XML Attribute |          | Description |
 |----------|:-------------:|------:|
 | binding:onClickCommand |  BindingCommand | |
 | binding:clickDelayed    |    Boolean   |   防止过快点击 |
 
 
-###RecyclerView
+### RecyclerView
 |  XML Attribute |          | Description |
 |----------|:-------------:|------:|
 | binding: adapter |  BaseRecyclerAdapter<*, *> | |
@@ -104,13 +104,13 @@ override fun getLayoutId(savedInstanceState: Bundle?) = R.layout.ui_activity_mai
 
 
 
-###ViewPager
+### ViewPager
 |  XML Attribute |          | Description |
 |----------|:-------------:|------:|
 | binding: adapter |  BaseFragmentAdapter<*> | |
 
 
-###Spinner
+### Spinner
 |  XML Attribute |          | Description |
 |----------|:-------------:|------:|
 | binding: dataList |  MutableList<ISpinner>  | 数据内容 |
@@ -118,7 +118,7 @@ override fun getLayoutId(savedInstanceState: Bundle?) = R.layout.ui_activity_mai
 | binding:onItemSelectedCommand | BindingCommand2<ISpinner> |
 
 
-#Retrofit
+# Retrofit
 
 ```
 interface TestService {
