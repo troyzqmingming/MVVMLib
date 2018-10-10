@@ -18,6 +18,17 @@ retrofit+okhttp+rxjava负责网络请求，使用gson进行json数据解释,使�
 	}
 	
 	```
+	
+* ViewDatabinding在kotlin中有时无法生成，可添加
+
+```
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+kapt {
+        generateStubs = true
+    }
+```
 2.	添加依赖
 
 在projcet的build.gradle中添加:
