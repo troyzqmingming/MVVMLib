@@ -9,4 +9,6 @@ interface IBaseViewModel{
     fun registerRxBus()
 
     fun removeRxBus()
+
+    fun loadWithoutNet()
 }

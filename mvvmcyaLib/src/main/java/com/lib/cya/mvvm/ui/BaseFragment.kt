@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.lib.cya.mvvm.utils.NetworkUtil
 import com.lib.cya.mvvm.vm.BaseViewModel
 import com.trello.rxlifecycle2.components.support.RxFragment
 
@@ -54,6 +55,11 @@ abstract class BaseFragment<V : ViewDataBinding, VM : BaseViewModel> : RxFragmen
         initViewObservable()
         vm.onCreate()
         vm.registerRxBus()
+        activity?.let {
+            if (!NetworkUtil.isNetworkAvailable(it)) {
+                vm.loadWithoutNet()
+            }
+        }
     }
 
     override fun onDestroy() {

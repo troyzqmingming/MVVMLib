@@ -8,6 +8,9 @@ import com.lib.cya.mvvm.ui.BaseActivity
 import com.lib.cya.mvvm.view.toast.ToastView
 
 open class BaseViewModel(val activity: BaseActivity<*, *>) : IBaseViewModel {
+    override fun loadWithoutNet() {
+    }
+
     override fun onCreate() {
     }
 

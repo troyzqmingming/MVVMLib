@@ -4,6 +4,7 @@ import android.databinding.DataBindingUtil
 import android.databinding.ViewDataBinding
 import android.os.Bundle
 import com.lib.cya.mvvm.MVVMSDK
+import com.lib.cya.mvvm.utils.NetworkUtil
 import com.lib.cya.mvvm.vm.BaseViewModel
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity
 
@@ -41,6 +42,9 @@ abstract class BaseActivity<V : ViewDataBinding, VM : BaseViewModel> : RxAppComp
         initViewObservable()
         vm.onCreate()
         vm.registerRxBus()
+        if (!NetworkUtil.isNetworkAvailable(this)) {
+            vm.loadWithoutNet()
+        }
     }
 
     override fun onDestroy() {
