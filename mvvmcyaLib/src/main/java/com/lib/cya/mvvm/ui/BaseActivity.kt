@@ -49,6 +49,13 @@ abstract class BaseActivity<V : ViewDataBinding, VM : BaseViewModel> : RxAppComp
 
     override fun onDestroy() {
         super.onDestroy()
+        vm.cancelDisposable()?.let {
+            for (index in it) {
+                if (index != null && !index.isDisposed) {
+                    index.dispose()
+                }
+            }
+        }
         vm.onDestroy()
         vm.removeRxBus()
         binding.unbind()
