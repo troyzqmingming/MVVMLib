@@ -6,8 +6,14 @@ import android.os.Bundle
 import com.hwangjr.rxbus.RxBus
 import com.lib.cya.mvvm.ui.BaseActivity
 import com.lib.cya.mvvm.view.toast.ToastView
+import io.reactivex.disposables.Disposable
 
 open class BaseViewModel(val activity: BaseActivity<*, *>) : IBaseViewModel {
+
+    override fun cancelDisposable(): Array<Disposable?>? {
+        return null
+    }
+
     override fun loadWithoutNet() {
     }
 
